@@ -6,15 +6,15 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class R3OdontoApplication extends SpringBootServletInitializer {
+public class DevErpApplication extends SpringBootServletInitializer {
 
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(R3OdontoApplication.class, args);
+        SpringApplication.run(DevErpApplication.class, args);
     }
 
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-        return application.sources(R3OdontoApplication.class);
+        return application.sources(DevErpApplication.class);
     }
 
 }
