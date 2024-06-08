@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastrar Usuário</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+        .error-message {
+            color: red;
+        }
+        .mensagem{
+            color: green;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Cadastrar Usuário</h1>
+      <div class="formulario">
+      <form action="/usuario/new" th:action="@{/usuario/new}" th:object="${usuario}" th:method="post" >
+        <div>
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" th:field="*{nome}"/>
+          <div th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" class="error-message"></div>
+        </div>
+        <div>
+            <label for="login">Login:</label>
+            <input type="text" id="login" th:field="*{login}"/>
+            <div th:if="${#fields.hasErrors('login')}" th:errors="*{login}" class="error-message"></div>
+        </div>
+        <div>
+            <label for="senha">Senha:</label>
+            <input type="text" id="senha" th:field="*{senha}"/>
+            <div th:if="${#fields.hasErrors('senha')}" th:errors="*{senha}" class="error-message"></div>
+        </div>
+         <div>
+            <label for="email">Email:</label>
+            <input type="text" id="email" th:field="*{email}"/>
+            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error-message"></div>
+        </div>
+        <div>
+            <button type="submit">Cadastrar</button>
+        </div>
+        <div th:if="${sucesso}" id="mensagemCadastroSucesso" class="mensagem">
+            Tarefa cadastrar com sucesso!
+        </div>
+      </form>
+    </div>
+      <a href="/usuario" class="btn-voltar">voltar</a>
+    </div>
+  </body>
+</html>

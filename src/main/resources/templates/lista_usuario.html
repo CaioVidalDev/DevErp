@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="pt" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Usuários</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+    <h1>Lista de Usuários</h1>
+    <div class="formulario">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th>Login</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr th:each="usuario : ${usuarios}">
+          <td th:text="${usuario.id}">ID</td>
+          <td th:text="${usuario.nome}">Nome</td>
+          <td th:text="${usuario.login}">Login</td>
+          <td th:text="${usuario.email}">Email</td>
+        </tr>
+      </tbody>
+    </table>
+     </div>
+    <a href="/usuario/new">Cadastrar Usuário</a>
+    <a href="/usuario" class="btn-voltar">voltar</a>
+    </div>
+  </body>
+</html>
